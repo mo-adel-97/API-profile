@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
 })
 
-app.get('/users', (req, res) => {
-  res.send('This is my users route..... ')
+app.post('/users', (req, res) => {
+  res.send(req.body)
 })
 
 // Export the Express API
