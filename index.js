@@ -20,7 +20,7 @@ app.get('/data',(req,res)=>{
   const data = {
   name:"mohamed"
   }
-  res.json(data.name)
+  res.json(data)
 })
 
 app.get('/about', (req, res) => {
