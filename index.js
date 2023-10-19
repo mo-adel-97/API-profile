@@ -16,5 +16,10 @@ app.post('/users', (req, res) => {
   res.send(req.body)
 })
 
+app.get('/about', (req, res) => {
+  res.send('aboy bage  🥳')
+})
+
+
 // Export the Express API
 module.exports = app
