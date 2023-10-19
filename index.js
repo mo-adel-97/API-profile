@@ -16,6 +16,13 @@ app.post('/users', (req, res) => {
   res.send(req.body)
 })
 
+app.get('/data',(req,res)=>{
+  const data = {
+  name:"mohamed"
+  }
+  res.json(data.name)
+})
+
 app.get('/about', (req, res) => {
   res.send('aboy bage  🥳')
 })
