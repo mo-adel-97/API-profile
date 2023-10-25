@@ -14,8 +14,10 @@ const PostUsers = async (req,res) =>{
     },
   })
 
+  try{
+
   if (IfUserExist){
-    res.send("this user is already exist ..... ")
+    res.send("this user is already exist")
     console.log("this user is already exist ....." )
   }else if(password === confirmpassword){
     const user = await prisma.user.create({
@@ -26,11 +28,14 @@ const PostUsers = async (req,res) =>{
         },
       })
       console.log(user)
-    res.send("this is okay ...... ")
+    res.send("this is okay")
   }else{
-    res.send("password is not match with confirm password .... ")
+    res.send("password is not match with confirm password")
     console.log("password is not match with confirm password .... ")
   }
+}catch(error){
+  res.send("this is an error on network .... ")
+}
 
 }
 
