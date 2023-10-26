@@ -9,6 +9,7 @@ const CorrectUserRouter = require('./Routes/UserCorrectRoute')
 const SpecificUser = require('./Routes/SpecificUser')
 const PostNotes = require('./Routes/PostNoteForUser')
 const GetNotes = require('./Routes/GetNotesForUser')
+const DeleteNote = require('./Routes/DeleteNote')
 
 
 app.use(cors())
@@ -18,6 +19,7 @@ app.use(CorrectUserRouter.UserCorrectRouter)
 app.use(SpecificUser.SpecificRouterUser)
 app.use(PostNotes.PostNoteFrUser)
 app.use(GetNotes.GetNotes)
+app.use(DeleteNote.DeleteRoutes)
 
 
 app.listen(PORT, () => {
