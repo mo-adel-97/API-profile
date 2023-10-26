@@ -3,13 +3,13 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 const PostNotes = async (req,res)=>{
+    try {
   const {id} = req.params;
   const data = req.body;
 console.log(data)
 const TITLE = data.noteName;
 const BODY = data.noteContent 
   console.log(id)
-  try {
     const user = await prisma.user.findUnique({
       where: { id: `${id}` },
     });

@@ -3,6 +3,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 const PostUsers = async (req,res) =>{
+  try{
    const data = req.body.data ;
    console.log(data.userName)
    const password = data.password;
@@ -13,8 +14,6 @@ const PostUsers = async (req,res) =>{
         username: data.userName ,
     },
   })
-
-  try{
 
   if (IfUserExist){
     res.send("this user is already exist")

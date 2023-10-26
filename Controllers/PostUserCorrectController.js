@@ -5,6 +5,7 @@ const prisma = new PrismaClient()
 const jwt = require('jsonwebtoken');
 
 const CorrectUser = async (req,res) =>{
+    try {
   const data = req.body.data
   console.log(data)
   const IfUserExist = await prisma.user.findUnique({
@@ -14,7 +15,6 @@ const CorrectUser = async (req,res) =>{
     },
   })
 
-  try {
  if(IfUserExist){
   const id = IfUserExist.id
   console.log(id)
